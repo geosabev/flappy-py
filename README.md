@@ -9,6 +9,7 @@ Flappy Py is a desktop game written in Python based on the very popular mobile g
 - different enemies coming from the opposite side (hedgehogs because you know what they eat);
 - speeding up and slowing down the movement;
 - growing and shrinking the size of the player;
+- stones falling from the sky;
 - local leaderboard showing the top 10 results;
 - changing player's name;
 - skin selection for the snake;

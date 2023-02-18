@@ -1,5 +1,5 @@
 import pygame
-from lib.constants import ENLARGEMENT_COEFFICIENT, SHRINKING_COEFFICIENT, BACKGROUND, SNAKE_SKIN_SHEET_MAPPING
+from lib.constants import ENLARGEMENT_COEFFICIENT, SHRINKING_COEFFICIENT, GAME_SCREEN_BACKGROUND, SNAKE_SKIN_SHEET_MAPPING
 from models.spritesheet import SpriteSheet
 
 
@@ -108,7 +108,7 @@ class Snake(pygame.sprite.Sprite):
         return self.has_boost
 
     def has_hit_ground(self):
-        return self.rect.bottom >= BACKGROUND.get_height()
+        return self.rect.bottom >= GAME_SCREEN_BACKGROUND.get_height()
 
     def is_under_pipe(self, pipe):
         return self.rect.left > pipe.rect.left and self.rect.left < pipe.rect.right
@@ -130,7 +130,7 @@ class Snake(pygame.sprite.Sprite):
         self.flying = False
 
     def fly_to_center(self):
-        self.rect.centery = BACKGROUND.get_height() / 2
+        self.rect.centery = GAME_SCREEN_BACKGROUND.get_height() / 2
 
     def is_dead(self):
         return self.dead

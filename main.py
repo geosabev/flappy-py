@@ -34,7 +34,7 @@ def main_menu(screen, player, skin, difficulty):
         75), 'deepskyblue4', 'deepskyblue3', SCREEN_WIDTH / 2, 550)
 
     while True:
-        screen.blit(MENU_BACKGROUND, (0, 0))
+        screen.blit(MENU_SCREEN_BACKGROUND, (0, 0))
         mouse_x, mouse_y = pygame.mouse.get_pos()
 
         draw_text(screen, 'Flappy Py', get_font(
@@ -104,7 +104,7 @@ def play(screen, player, skin, difficulty):
         current_time = pygame.time.get_ticks()
         time_since_boost = current_time - boost_start_time
 
-        screen.blit(BACKGROUND, (0, 0))
+        screen.blit(GAME_SCREEN_BACKGROUND, (0, 0))
 
         for group in [pipe_group, stone_group, hedgehog_group, boost_group]:
             group.draw(screen)
@@ -320,7 +320,7 @@ def options(screen, player, skin, difficulty):
     }
 
     while True:
-        screen.blit(MENU_BACKGROUND, (0, 0))
+        screen.blit(MENU_SCREEN_BACKGROUND, (0, 0))
         mouse_x, mouse_y = pygame.mouse.get_pos()
 
         current_name = text_field.get_value()
@@ -427,7 +427,7 @@ def scores(screen, player, skin, difficulty):
         70), 'deepskyblue4', 'deepskyblue3', SCREEN_WIDTH / 2, 600)
 
     while True:
-        screen.blit(MENU_BACKGROUND, (0, 0))
+        screen.blit(MENU_SCREEN_BACKGROUND, (0, 0))
         mouse_x, mouse_y = pygame.mouse.get_pos()
 
         draw_text(screen, 'Scores', get_font(
@@ -485,7 +485,7 @@ def death_screen(screen, points, player, skin, difficulty):
         70), 'orange', 'orange4', SCREEN_WIDTH / 2, 500)
 
     while True:
-        screen.blit(DEATH_SCREEN, (0, 0))
+        screen.blit(DEATH_SCREEN_BACKGROUND, (0, 0))
         mouse_x, mouse_y = pygame.mouse.get_pos()
 
         draw_text(screen, 'Game Over', get_font(

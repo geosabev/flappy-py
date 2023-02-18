@@ -1,9 +1,9 @@
 import pygame
 
-MENU_BACKGROUND = pygame.image.load('assets/img/menu.png')
-DEATH_SCREEN = pygame.image.load('assets/img/death.png')
+MENU_SCREEN_BACKGROUND = pygame.image.load('assets/img/menu_screen.png')
+DEATH_SCREEN_BACKGROUND = pygame.image.load('assets/img/death_screen.png')
+GAME_SCREEN_BACKGROUND = pygame.image.load('assets/img/game_screen.png')
 
-BACKGROUND = pygame.image.load('assets/img/background.png')
 GROUND = pygame.image.load('assets/img/ground.png')
 PIPE = pygame.image.load('assets/img/pipe.png')
 STONES = [pygame.image.load(

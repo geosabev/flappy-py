@@ -1,5 +1,6 @@
 import pygame
-from lib.constants import ENLARGEMENT_COEFFICIENT, SHRINKING_COEFFICIENT, GAME_SCREEN_BACKGROUND, SNAKE_SKIN_SHEET_MAPPING
+from lib.constants import (ENLARGEMENT_COEFFICIENT, INITIAL_LIFES_COUNT, SHRINKING_COEFFICIENT,
+                           GAME_SCREEN_BACKGROUND, SNAKE_FALL_SPEED, SNAKE_SKIN_SHEET_MAPPING, SNAKE_VELOCITY_LIMIT)
 from models.spritesheet import SpriteSheet
 
 
@@ -15,9 +16,8 @@ class Snake(pygame.sprite.Sprite):
         self.index = 0
         self.counter = 0
 
-        self.lifes = 1
-
-        self.speed = 0.5
+        self.lifes = INITIAL_LIFES_COUNT
+        self.speed = SNAKE_FALL_SPEED
         self.velocity = 0
 
         self.dead = False
@@ -35,13 +35,13 @@ class Snake(pygame.sprite.Sprite):
         if self.flying:
             self.velocity += self.speed
 
-            if self.velocity > 8.5:
-                self.velocity = 8.5
+            if self.velocity > SNAKE_VELOCITY_LIMIT:
+                self.velocity = SNAKE_VELOCITY_LIMIT
 
             if self.rect.top < 0:
                 self.rect.y = 0
 
-            if self.rect.bottom < 576:
+            if self.rect.bottom < GAME_SCREEN_BACKGROUND.get_height():
                 self.rect.y += int(self.velocity)
 
         if not self.dead:

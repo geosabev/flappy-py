@@ -109,7 +109,8 @@ def play(screen, player, skin, difficulty):
         for group in [pipe_group, stone_group, hedgehog_group, boost_group]:
             group.draw(screen)
 
-        screen.blit(GROUND, (ground_scroll, 576))
+        screen.blit(
+            GROUND, (ground_scroll, GAME_SCREEN_BACKGROUND.get_height()))
 
         screen.blit(snake.image, snake.rect)
         snake.update()

@@ -1,7 +1,6 @@
 import random
 import pygame
-
-from lib.constants import STONES
+from lib.constants import GAME_SCREEN_BACKGROUND, STONES
 
 
 class Stone(pygame.sprite.Sprite):
@@ -26,7 +25,7 @@ class Stone(pygame.sprite.Sprite):
     def update(self, scroll_speed):
         self.rect.x -= scroll_speed
 
-        if self.rect.bottom < 576:
+        if self.rect.bottom < GAME_SCREEN_BACKGROUND.get_height():
             self.rect.y += self.falling_speed
 
         if self.rect.right < 0:

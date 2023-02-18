@@ -49,16 +49,16 @@ def main_menu(screen, player, skin, difficulty):
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if play_button.check_for_input(mouse_x, mouse_y):
+                if play_button.check_for_click(mouse_x, mouse_y):
                     play(screen, player, skin, difficulty)
 
-                if options_button.check_for_input(mouse_x, mouse_y):
+                if options_button.check_for_click(mouse_x, mouse_y):
                     options(screen, player, skin, difficulty)
 
-                if scores_button.check_for_input(mouse_x, mouse_y):
+                if scores_button.check_for_click(mouse_x, mouse_y):
                     scores(screen, player, skin, difficulty)
 
-                if quit_button.check_for_input(mouse_x, mouse_y):
+                if quit_button.check_for_click(mouse_x, mouse_y):
                     pygame.quit()
                     sys.exit()
 
@@ -381,7 +381,7 @@ def options(screen, player, skin, difficulty):
                 else:
                     text_field.disable()
 
-                if previous_button.check_for_input(mouse_x, mouse_y):
+                if previous_button.check_for_click(mouse_x, mouse_y):
                     skin_idx -= 1
 
                     if skin_idx < 0:
@@ -389,7 +389,7 @@ def options(screen, player, skin, difficulty):
 
                     selected_skin = SKIN_COLORS[skin_idx]
 
-                if next_button.check_for_input(mouse_x, mouse_y):
+                if next_button.check_for_click(mouse_x, mouse_y):
                     skin_idx += 1
 
                     if skin_idx >= len(SKIN_COLORS):
@@ -397,20 +397,20 @@ def options(screen, player, skin, difficulty):
 
                     selected_skin = SKIN_COLORS[skin_idx]
 
-                if easy_button.check_for_input(mouse_x, mouse_y):
+                if easy_button.check_for_click(mouse_x, mouse_y):
                     selected_difficulty = 'easy'
 
-                if medium_button.check_for_input(mouse_x, mouse_y):
+                if medium_button.check_for_click(mouse_x, mouse_y):
                     selected_difficulty = 'medium'
 
-                if hard_button.check_for_input(mouse_x, mouse_y):
+                if hard_button.check_for_click(mouse_x, mouse_y):
                     selected_difficulty = 'hard'
 
-                if save_button.check_for_input(mouse_x, mouse_y):
+                if save_button.check_for_click(mouse_x, mouse_y):
                     main_menu(screen, text_field.get_value(), selected_skin,
                               selected_difficulty)
 
-                if cancel_button.check_for_input(mouse_x, mouse_y):
+                if cancel_button.check_for_click(mouse_x, mouse_y):
                     main_menu(screen, player, skin, difficulty)
 
         pygame.display.update()
@@ -462,7 +462,7 @@ def scores(screen, player, skin, difficulty):
                 sys.exit()
 
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if menu_button.check_for_input(mouse_x, mouse_y):
+                if menu_button.check_for_click(mouse_x, mouse_y):
                     main_menu(screen, player, skin, difficulty)
 
         pygame.display.update()
@@ -504,13 +504,13 @@ def death_screen(screen, points, player, skin, difficulty):
                 sys.exit()
 
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if restart_button.check_for_input(mouse_x, mouse_y):
+                if restart_button.check_for_click(mouse_x, mouse_y):
                     play(screen, player, skin, difficulty)
 
-                if menu_button.check_for_input(mouse_x, mouse_y):
+                if menu_button.check_for_click(mouse_x, mouse_y):
                     main_menu(screen, player, skin, difficulty)
 
-                if quit_button.check_for_input(mouse_x, mouse_y):
+                if quit_button.check_for_click(mouse_x, mouse_y):
                     pygame.quit()
                     sys.exit()
 

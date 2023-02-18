@@ -442,15 +442,15 @@ def scores(screen, player, skin, difficulty):
             scores_only.sort(key=lambda x: int(x[1]), reverse=True)
 
             for idx, score in enumerate(scores_only[0:9]):
-                player = get_font(40).render(f'{score[0]}', True, 'black')
-                player_rect = player.get_rect(
+                name = get_font(40).render(f'{score[0]}', True, 'black')
+                name_rect = name.get_rect(
                     center=(SCREEN_WIDTH / 2 - 90, 200 + (idx + 1) * 35))
 
                 value = get_font(40).render(f'{score[1]}', True, 'black')
                 value_rect = value.get_rect(
                     center=(SCREEN_WIDTH / 2 + 90, 200 + (idx + 1) * 35))
 
-                screen.blit(player, player_rect)
+                screen.blit(name, name_rect)
                 screen.blit(value, value_rect)
 
         menu_button.change_color(mouse_x, mouse_y)

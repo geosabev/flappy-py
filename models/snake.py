@@ -15,7 +15,7 @@ class Snake(pygame.sprite.Sprite):
         self.index = 0
         self.counter = 0
 
-        self.lifes = 6
+        self.lifes = 1
 
         self.speed = 0.5
         self.velocity = 0

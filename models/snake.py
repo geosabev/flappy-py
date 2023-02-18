@@ -96,7 +96,7 @@ class Snake(pygame.sprite.Sprite):
             self.get_bonus_life()
         elif boost.type == 'GROW':
             self.grow()
-        elif boost.type == 'SHIRNK':
+        elif boost.type == 'SHRINK':
             self.shrink()
 
     def deactivate_boost(self):
